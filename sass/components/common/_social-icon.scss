@@ -1,0 +1,31 @@
+.socials-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+}
+
+
+.socials-list a:hover,
+.socials-list a:focus {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+  }
+.socials-list__item {
+  width: 44px;
+  height: 44px;
+}
+
+.socials-list a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--icons-color);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}

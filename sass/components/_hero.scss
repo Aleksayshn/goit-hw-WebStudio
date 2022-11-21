@@ -1,0 +1,62 @@
+
+.hero {
+  padding-top: 118px;
+  padding-bottom: 118px;
+  margin-left: auto;
+  margin-right: auto;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+    background-image: var(--gradient),
+    url(../images/hero1x-mob.jpg);
+  background-color: var(--bgr-hero-color);
+  text-align: center;
+
+  @include retina {
+    background-image: var(--gradient), url(../images/hero2x-mob.jpg);
+  }
+
+  @include scr(tablet) {
+    background-image: var(--gradient), url(../images/hero1x-tab.jpg);
+    @include retina {
+      background-image: var(--gradient), url(../images/hero2x-tab.jpg);
+    }
+  }
+
+  @include scr(desktop) {
+    max-width: 1600px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background-image: var(--gradient), url(../images/hero-desctop.jpg);
+    @include retina {
+      background-image: var(--gradient), url(../images/hero-desctop2x.jpg);
+    }
+  }
+}
+
+.hero__title {
+  width: 360px;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  color: var(--background-color);
+
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 1.61;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  @include scr(desktop) {
+  width: 696px;
+    font-size: 44px;
+  line-height: 1.3;
+  letter-spacing: 0.06em;font-weight: 900;
+  font-size: 44px;
+  line-height: 1.3;
+  }
+
+}
+
