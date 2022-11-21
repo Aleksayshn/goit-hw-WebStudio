@@ -252,16 +252,17 @@ a:hover, a:focus {
 .header {
   border-bottom: 1px solid #ececec;
 }
+@media screen and (max-width: 767.98px) {
+  .header {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
 
 .header__container {
   display: flex;
   justify-content: space-between;
-}
-@media screen and (max-width: 767.98px) {
-  .header__container {
-    padding-top: 16px;
-    padding-bottom: 16px;
-  }
+  align-items: center;
 }
 @media screen and (min-width: 768px) {
   .header__container {
@@ -290,8 +291,7 @@ a:hover, a:focus {
 }
 
 @media screen and (min-width: 768px) {
-  .nav-list,
-.contacts-list {
+  .nav-list {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -300,14 +300,15 @@ a:hover, a:focus {
 
 @media screen and (min-width: 768px) and (max-width: 1199.98px) {
   .contacts-list {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    gap: 10px;
+    display: block;
   }
 }
 @media screen and (min-width: 1200px) {
   .contacts-list {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    gap: 10px;
     margin-left: auto;
   }
 }
@@ -349,7 +350,31 @@ a:hover, a:focus {
     color: var(--second-text-color);
   }
 }
+@media screen and (max-width: 1999px) {
+  .contacts-list__item a {
+    font-size: 12px;
+  }
+}
 
+@media screen and (min-width: 1200px) {
+  .contacts-list__mail {
+    width: 16px;
+    height: 12px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .contacts-list__tel {
+    width: 10px;
+    height: 16px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199.98px) {
+  .contacts-list__item + .contacts-list__item {
+    margin-top: 10px;
+  }
+}
 @media screen and (min-width: 1200px) {
   .contacts-list__item + .contacts-list__item {
     margin-left: 30px;
@@ -472,6 +497,7 @@ a:hover, a:focus {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 120px;
   margin-bottom: 30px;
   background-color: var(--section-color);
   border-radius: 4px;
@@ -631,6 +657,7 @@ a:hover, a:focus {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    align-items: baseline;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -939,7 +966,7 @@ textarea:hover, textarea:focus {
 
 @media screen and (min-width: 1200px) {
   .deal-label {
-    left: 45px;
+    left: 19px;
     font-size: 14px;
     line-height: 1.71;
   }
@@ -947,6 +974,11 @@ textarea:hover, textarea:focus {
 .deal-text {
   font-size: 12px;
   line-height: 1.71;
+}
+@media screen and (min-width: 1200px) {
+  .deal-text {
+    font-size: 14px;
+  }
 }
 
 .deal-link {

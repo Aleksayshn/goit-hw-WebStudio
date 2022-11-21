@@ -1,17 +1,16 @@
 .header {
   border-bottom: 1px solid #ececec;
-}
-
-.header__container {
-  display: flex;
-  justify-content: space-between;
-
   @include scr(mobile-only) {
       padding-top: 16px;
       padding-bottom: 16px;
     }
-  
+  }
 
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
   @include scr(tablet) {
     
   display: flex;
@@ -36,8 +35,7 @@
   }
 }
 
-.nav-list,
-.contacts-list {
+.nav-list{
   @include scr(tablet) {
     display: flex;
     align-items: center;
@@ -48,12 +46,13 @@
 .contacts-list {
 
   @include scr(tablet-only) {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    gap: 10px;
+    display: block;
 }
 @include scr(desktop) {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  gap: 10px;
   margin-left: auto;
 }
 }
@@ -99,9 +98,28 @@
   @include scr(not-mobile) {
   color: var(--second-text-color);
 }
+@media screen and (max-width: 1999px) {
+  font-size: 12px;
+}
+}
+.contacts-list__mail {
+  @include scr(desktop) {
+width: 16px;
+height: 12px;
+  }
+}
+
+.contacts-list__tel {
+  @include scr(desktop) {
+    width: 10px;
+    height: 16px;
+  }
 }
 
 .contacts-list__item+.contacts-list__item {
+  @include scr(tablet-only) {
+    margin-top: 10px;
+  }
   @include scr(desktop) {
   margin-left: 30px;
 }

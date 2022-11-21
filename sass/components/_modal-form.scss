@@ -100,7 +100,7 @@ textarea {
 }
 @include scr(desktop) {
   .deal-label {
-    left: 45px;
+    left: 19px;
     font-size: 14px;
     line-height: 1.71;
     
@@ -110,6 +110,9 @@ textarea {
 .deal-text {
   font-size: 12px;
   line-height: 1.71;
+  @include scr(desktop) {
+    font-size: 14px;
+  }
 }
 
 .deal-link {
