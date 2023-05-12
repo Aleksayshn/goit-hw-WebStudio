@@ -1,0 +1,37 @@
+.order-form__title {
+	margin-bottom: 12px;
+
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 1.15;
+	text-align: center;
+
+	color: $titleTextColor;
+}
+.order-form__form-field {
+	margin-bottom: 20px;
+}
+
+.form-field__label {
+	display: block;
+	margin-bottom: 4px;
+
+	font-size: 12px;
+	line-height: 1.17;
+	letter-spacing: 0.01em;
+
+	color: $primaryTextColor;
+}
+.form-field__wrapper {
+	position: relative;
+	margin-bottom: 10px;
+}
+.order-form__btn-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.order-form__btn {
+	@include btn(52px);
+}

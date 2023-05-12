@@ -1,0 +1,52 @@
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: $fontRoboto;
+	background-color: $primaryBgc;
+	letter-spacing: 0.03em;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.section {
+	padding: 60px 0;
+}
+
+.link:hover {
+	color: $accentColor;
+}
+.link:focus {
+	color: $accentColor;
+}
+
+.title {
+	margin-bottom: $cardSetGap;
+
+	font-weight: 700;
+	font-size: 28px;
+	line-height: 1.18;
+	text-align: center;
+
+	color: $titleTextColor;
+
+	@media screen and (min-width: $tablet) {
+		margin-bottom: 30px;
+	}
+
+	@media screen and (min-width: $desktop) {
+		margin-bottom: 50px;
+
+		font-size: 36px;
+		line-height: 1.17;
+	}
+}
+
+body.modal-open {
+	overflow: hidden;
+}

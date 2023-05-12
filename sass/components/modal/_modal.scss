@@ -1,0 +1,65 @@
+.modal {
+	position: relative;
+	padding: 40px;
+
+	width: 100%;
+
+	transform: scale(1);
+	transition: transform $transitionModal;
+
+	background-color: $primaryBgc;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+
+	@media screen and (max-width: 330px) {
+		padding: 40px 10px;
+	}
+
+	@media screen and (min-width: 331px) and (max-width: 470px) {
+		padding: 40px 20px;
+	}
+
+	@media screen and (min-width: $mobile) {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		width: 450px;
+		height: 609px;
+	}
+
+	@media screen and (min-width: $desktop) {
+		width: 528px;
+		height: 581px;
+	}
+
+	.backdrop.is-hidden & {
+		transform: translate(-50%, -50%) scale(0) perspective(400px) rotateX(90deg);
+	}
+}
+
+.close-btn {
+	@extend %icon-centered;
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	padding: 6px;
+
+	cursor: pointer;
+	background-color: transparent;
+	border-radius: 50%;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	color: #000000;
+
+	transition: $transitionColor;
+
+	&__icon {
+		fill: currentColor;
+	}
+
+	&:hover,
+	&:focus {
+		color: $accentColor;
+	}
+}

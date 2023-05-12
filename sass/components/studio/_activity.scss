@@ -1,0 +1,37 @@
+.activity {
+	@media screen and (max-width: 1199px) {
+		display: none;
+	}
+}
+
+@media screen and (min-width: $desktop) {
+	.activity {
+		padding-top: 0;
+	}
+
+	.activity__list {
+		display: flex;
+		gap: $cardSetGap;
+	}
+
+	.activity__img-wrapper {
+		position: relative;
+	}
+
+	.activity__text {
+		position: absolute;
+		bottom: 0;
+		padding: 27px 15px;
+
+		width: 100%;
+
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 1.14;
+		text-align: center;
+		text-transform: uppercase;
+
+		color: $rareTextColor;
+		background-color: rgba(47, 48, 58, 0.8);
+	}
+}

@@ -1,16 +1,39 @@
-:root {
-  --primary-text-color: #212121;
-  --second-text-color: #757575;
-  --accent-color: #2196f3;
-  --background-color: #fff;
-  --accent-button-color: #188ceb;
-  --section-color: #f5f4fa;
-  --footer-color: #2f303a;
-  --footer-text-color: rgba(255, 255, 255, 0.6);
-  --bgr-hero-color: #c4c4c4;
-  --icons-color: #afb1b8;
-  --gradient: linear-gradient(to right,
-      rgba(47, 48, 58, 0.4),
-      rgba(47, 48, 58, 0.4)
-      );
-}
+// * COLOR
+// accent color
+$accentColor: #2196f3;
+// logo color
+$logoWhite: #ffffff;
+$logoBlack: #000000;
+// text color
+$primaryTextColor: #757575;
+$secondaryTextColor: rgba(255, 255, 255, 0.6);
+$rareTextColor: #ffffff;
+$titleTextColor: #212121;
+// background color
+$primaryBgc: #ffffff;
+$secondaryBgc: #2f303a;
+$tertiaryBgc: #f5f4fa;
+// icon color
+$primaryIconColor: #afb1b8;
+$hoverIconColor: #ffffff;
+$formIconColor: #212121;
+// button color
+$btnColor: #188ce8;
+// * FONT-FAMILY
+$fontRoboto: Roboto, sans-serif;
+$fontRaleway: Raleway, sans-serif;
+// * GAP
+$cardSetGap: 30px;
+// * BORDER
+$headerBorder: 1px solid #ececec;
+$portfolioBorder: 1px solid #eeeeee;
+// * SHADOW
+$shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+// * TRANSITION
+$transitionBgc: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+$transitionColor: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+$transitionBorder: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+$transitionBoxShadow: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+$transitionTransform: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+$transitionOpacity: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+$transitionModal: 500ms cubic-bezier(0.4, 0, 0.2, 1);

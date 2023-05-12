@@ -1,0 +1,81 @@
+.hero {
+	padding: 118px 0;
+
+	background-color: #c4c4c4;
+	background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+		url(../img/bitmap/background/background-mobile.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	text-align: center;
+
+	@media (min-device-pixel-ratio: 2),
+		(-webkit-min-device-pixel-ratio: 2),
+		(min-resolution: 192dpi),
+		(min-resolution: 2dppx) {
+		background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+			url("../img/bitmap/background/background-mobile@2x.jpg");
+	}
+
+	@media screen and (min-width: $tablet) {
+		background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+			url(../img/bitmap/background/background-tab.jpg);
+
+		@media (min-device-pixel-ratio: 2),
+			(-webkit-min-device-pixel-ratio: 2),
+			(min-resolution: 192dpi),
+			(min-resolution: 2dppx) {
+			background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+				url("../img/bitmap/background/background-tab@2x.jpg");
+		}
+	}
+
+	@media screen and (min-width: $desktop) {
+		padding: 200px 0;
+		margin-right: auto;
+		margin-left: auto;
+		max-width: 1600px;
+
+		background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+			url(../img/bitmap/background/background.jpg);
+
+		@media (min-device-pixel-ratio: 2),
+			(-webkit-min-device-pixel-ratio: 2),
+			(min-resolution: 192dpi),
+			(min-resolution: 2dppx) {
+			background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+				url("../img/bitmap/background/background@2x.jpg");
+		}
+	}
+}
+
+.hero__container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.hero__title {
+	margin-bottom: $cardSetGap;
+	max-width: 360px;
+
+	font-weight: 900;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	font-size: 26px;
+	line-height: 1.62;
+
+	color: $rareTextColor;
+
+	@media screen and (min-width: $desktop) {
+		min-width: 696px;
+
+		font-size: 44px;
+		line-height: 1.36;
+	}
+}
+
+.hero__btn {
+	@include btn(24px);
+}

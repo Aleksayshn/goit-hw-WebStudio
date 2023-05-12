@@ -1,0 +1,35 @@
+.social-networks {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+.social-networks__icon {
+	display: inline-flex;
+	fill: currentColor;
+
+	&--white {
+		fill: $hoverIconColor;
+	}
+}
+
+.social-networks__link {
+	@extend %icon-centered;
+
+	transition: $transitionBgc, $transitionColor;
+
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	color: $primaryIconColor;
+
+	&---opacity {
+		background-color: rgba(255, 255, 255, 0.1);
+	}
+
+	&:hover,
+	&:focus {
+		background-color: $accentColor;
+		color: $hoverIconColor;
+	}
+}

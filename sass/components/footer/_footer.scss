@@ -1,0 +1,31 @@
+.page-footer {
+	padding: 60px 0;
+
+	text-align: center;
+
+	background-color: $secondaryBgc;
+}
+
+.page-footer__container {
+	@media screen and (min-width: $tablet) {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		justify-content: center;
+	}
+}
+
+.page-footer__text {
+	display: block;
+	margin-bottom: 20px;
+
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 1.14;
+	text-transform: uppercase;
+	color: $rareTextColor;
+
+	@media screen and (min-width: $desktop) {
+		text-align: start;
+	}
+}

@@ -1,0 +1,22 @@
+.backdrop {
+	position: fixed;
+	z-index: 99;
+	top: 0;
+	left: 0;
+	padding: 93px 15px;
+
+	width: 100vw;
+	height: 100vh;
+
+	overflow-y: auto;
+	opacity: 1;
+	transition: opacity $transitionModal, visibility $transitionModal;
+
+	background-color: rgba(0, 0, 0, 0.2);
+
+	&.is-hidden {
+		visibility: hidden;
+		opacity: 0;
+		pointer-events: none;
+	}
+}

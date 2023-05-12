@@ -1,0 +1,34 @@
+.logo {
+	font-family: $fontRaleway;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 1.17;
+
+	text-decoration: none;
+
+	&--black {
+		color: $logoBlack;
+	}
+	&--white {
+		color: $logoWhite;
+	}
+
+	&__accent {
+		color: $accentColor;
+	}
+
+	@media screen and (min-width: $tablet) {
+		&.page-header__logo {
+			margin-right: 87px;
+		}
+
+		@media screen and (min-width: $desktop) {
+			font-size: 26px;
+			line-height: 1.19;
+
+			&.page-header__logo {
+				margin-right: 93px;
+			}
+		}
+	}
+}

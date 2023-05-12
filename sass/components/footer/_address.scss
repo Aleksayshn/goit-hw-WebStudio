@@ -1,0 +1,37 @@
+.address-thumb {
+	@media screen and (max-width: 1199px) {
+		margin-bottom: 60px;
+	}
+
+	@media screen and (min-width: $tablet) {
+		width: calc(100% / 2);
+	}
+
+	@media screen and (min-width: $desktop) {
+		margin-right: 94px;
+		width: auto;
+		text-align: start;
+	}
+}
+
+.address {
+	margin-top: 20px;
+}
+
+.address__list {
+	display: flex;
+	flex-direction: column;
+	row-gap: 8px;
+}
+
+.address__link {
+	font-size: 14px;
+	line-height: 1.71;
+
+	color: $secondaryTextColor;
+	transition: $transitionColor;
+
+	&--white {
+		color: $rareTextColor;
+	}
+}

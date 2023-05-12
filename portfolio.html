@@ -4,233 +4,484 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Домашнє завдання GoIt">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфоліо</title>
+    <title>Портфолио</title>
+    <link rel="icon" href="./img/bitmap/icon.png" type="images/png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
-        integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
-        <link rel="stylesheet" href="./css/main.min.css">
-
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css" />
+    <link rel="stylesheet" href="./css/main.min.css">
 </head>
 
 <body>
-    <header class="header">
-        <div class="header__container container">
-            <a class="logo" href="/"><span class="logo__accent">Web</span>Studio</a>
-            <nav class="header__nav">
-                <ul class="nav-list">
-                    <li class="nav-list__item"><a  href="./index.html">Студія</a></li>
-                    <li class="nav-list__item"><a class="nav-list__item--current" href="./portfolio.html">Портфоліо</a></li>
-                    <li class="nav-list__item"><a href="/">Контакти</a></li>
-                </ul>
-            </nav>
+    <!-- Шапка -->
+    <header class="page-header">
+        <div class="page-header__container container">
+            <a lang="en" class="logo logo--black page-header__logo" href="./index.html">
+                <span class="logo__accent">Web</span>Studio</a>
+            <button class="menu-btn" aria-expanded="false" data-menu-button>
+                <svg class="menu-btn__icons" width="40" height="40" aria-label="Перемикач мобільного меню">
+                    <use class="menu-btn__icon--cross" href="./img/svg/symbol-defs.svg#icon-cross"></use>
+                    <use class="menu-btn__icon--menu" href="./img/svg/symbol-defs.svg#icon-menu"></use>
+                </svg>
+            </button>
 
-            <ul class="contacts-list">
-                <li class="contacts-list__item">
-                    <a href="mailto:info@devstudio.com">
-                        <svg width="16" height="12">
-                            <use href="./images/icons.svg#icon-mail"></use>
-                        </svg>
-
-                        info@devstudio.com</a>
-                </li>
-                <li class="contacts-list__item">
-                    <a href="tel:+380961111111">
-                        <svg width="10" height="16">
-                            <use href="./images/icons.svg#icon-tel"></use>
-                        </svg>
-                        +380961111111</a>
-                </li>
-            </ul>
+            <div class="menu" data-menu>
+                <div class="container menu__container">
+                    <nav class="nav">
+                        <ul class="site-nav list">
+                            <li class="site-nav__item">
+                                <a class="site-nav__link link" href="./index.html">Студія</a>
+                            </li>
+                            <li class="site-nav__item">
+                                <a class="site-nav__link link site-nav__link--current"
+                                    href="./portfolio.html">Портфоліо</a>
+                            </li>
+                            <li class="site-nav__item">
+                                <a class="site-nav__link link" href="#contacts">Контакти</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <ul class="contacts-list list">
+                        <li class="contacts-list__item">
+                            <a class="contacts-list__link link" href="mailto:info@example.com">
+                                <svg width="16" height="12" class="contacts-list__icon">
+                                    <use href="./img/svg/symbol-defs.svg#icon-header-mail"></use>
+                                </svg>
+                                info@example.com
+                            </a>
+                        </li>
+                        <li class="contacts-list__item">
+                            <a class="contacts-list__link contacts-list__link--accent link" href="tel:+380991111111">
+                                <svg width="10" height="16" class="contacts-list__icon">
+                                    <use href="./img/svg/symbol-defs.svg#icon-header-smartphone"></use>
+                                </svg>
+                                +38 099 111 11 11
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="mobile-soc list">
+                        <li class="mobile-soc__item">
+                            <a href="" class="mobile-soc__link link">Instagram</a>
+                        </li>
+                        <li class="mobile-soc__item">
+                            <a href="" class="mobile-soc__link link">Twitter</a>
+                        </li>
+                        <li class="mobile-soc__item">
+                            <a href="" class="mobile-soc__link link">Facebook</a>
+                        </li>
+                        <li class="mobile-soc__item">
+                            <a href="" class="mobile-soc__link link">LinkedIn</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </header>
-    <main>
-        <section class="section">
-            <div class="container portfolio">
-                <h1 class="visually-hidden">Приклади робіт</h1>
-                <ul class="page-filter list">
-                    <li class="item">
-                        <button class="button" type="button">Усі</button>
+    <!-- MAIN  -->
+    <main class="portfolio">
+        <section class="section content">
+            <div class="container">
+                <h1 class="title title--hidden">Портфоліо</h1>
+                <ul class="filter list">
+                    <li data-aos="zoom-in" class="filter__item"><button type="button" class="filter__btn">Все</button>
                     </li>
-                    <li class="item"><button class="button" type="button">Веб-сайти</button></li>
-                    <li class="item"><button class="button" type="button">Додатки</button></li>
-                    <li class="item"><button class="button" type="button">Дизайн</button></li>
-                    <li class="item"><button class="button" type="button">Маркетинг</button></li>
+                    <li data-aos="zoom-in" class="filter__item"><button type="button"
+                            class="filter__btn">Веб-сайти</button></li>
+                    <li data-aos="zoom-in" class="filter__item"><button type="button"
+                            class="filter__btn">Додатки</button></li>
+                    <li data-aos="zoom-in" class="filter__item"><button type="button"
+                            class="filter__btn">Дизайн</button></li>
+                    <li data-aos="zoom-in" class="filter__item"><button type="button"
+                            class="filter__btn">Маркетинг</button></li>
                 </ul>
-                <ul class="examples list">
-                    <li class="item">
-                        <a class="example-link" href="/">
-                            <div class="box-overlay">
-                            <img src="./images/macbook.jpg" alt="Технокряк" width="370">
-                            
+                <!-- ---------СЕТКА--------- -->
+                <ul class="card-set list">
+                    <!-- 1ый элемент  -->
+                    <li data-aos="zoom-in" class="card-set__item">
+                        <a href="" class="card-set__link link">
+                            <div class="card">
+                                <picture>
+                                    <source type="image/webp" media="(max-width: 767px)"
+                                        sizes="(min-width: 320px) 320px,90vw" srcset="./img/bitmap/portfolio/mobile/webp/notebook-first-450.webp 450w,
+                                    ./img/bitmap/portfolio/mobile/webp/notebook-first-900.webp 900w" />
 
-                                <div class="portfolio-overlay">
-                                    <p class="text">Технокряк это современная площадка
-                                        распространения коронавируса. Компании используют эту платформу для цифрового
-                                        шпионажа и атак на защищённые сервера конкурентов.</p>
-                                </div>
-                        </div>
+                                    <source type="image/webp" media="(min-width: 768px) and (max-width: 1199px)"
+                                        sizes="(min-width: 768px) and (min-width: 354px) 354px, 50vw" srcset="./img/bitmap/portfolio/tablet/webp/notebook-first-354.webp 354w,
+                                    ./img/bitmap/portfolio/tablet/webp/notebook-first-708.webp 708w" />
 
+                                    <source type="image/webp" media="(min-width: 1200px)"
+                                        sizes="(min-width: 370px) 370px, 25vw" srcset="./img/bitmap/portfolio/desktop/webp/notebook-first-370.webp 370w,
+                                    ./img/bitmap/portfolio/desktop/webp/notebook-first-740.webp 740w" />
 
-                        <div class="example-wrapper">
-                            <h2 class="example-title">Технокряк</h2>
-                            <p class="text">Веб-сайт</p>
-                        </div>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a class="example-link" href="/">
-                        <div class="box-overlay">
-                            <img src="./images/basketball.jpg" alt="Постер New Orlean" width="370">
-                            
+                                    <source type="image/jpeg" media="(max-width: 767px)"
+                                        sizes="(min-width: 320px) 320px,90vw" srcset="./img/bitmap/portfolio/mobile/notebook-first-450.jpg 450w,
+                                    ./img/bitmap/portfolio/mobile/notebook-first-900.jpg 900w" />
 
-                                <div class="portfolio-overlay">
-                                    <p class="text">Технокряк это современная площадка
-                                        распространения коронавируса. Компании используют эту платформу для цифрового
-                                        шпионажа и атак на защищённые сервера конкурентов.</p>
-                                </div>
-                        </div>
+                                    <source type="image/jpeg" media="(min-width: 768px) and (max-width: 1199px)"
+                                        sizes="(min-width: 354px) 354px, 50vw" srcset="./img/bitmap/portfolio/tablet/notebook-first-354.jpg 354w,
+                                    ./img/bitmap/portfolio/tablet/notebook-first-708.jpg 708w" />
 
+                                    <source type="image/jpeg" media="(min-width: 1200px)"
+                                        sizes="(min-width: 370px) 370px, 25vw" srcset="./img/bitmap/portfolio/desktop/notebook-first-370.jpg 370w,
+                                    ./img/bitmap/portfolio/desktop/notebook-first-740.jpg 740w" />
 
-                        <div class="example-wrapper">
-                            <h2 class="example-title">Постер New Orlean vs Golden Star</h2>
-                            <p class="text">Дизайн</p>
-                        </div>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a class="example-link" href="/">
-                        <div class="box-overlay"> <img src="./images/seafood_@1x.jpg" alt="Ресторан" width="370">
-                            
-
-                                <div class="portfolio-overlay">
-                                    <p class="text">Технокряк это современная площадка
-                                        распространения коронавируса. Компании используют эту платформу для цифрового
-                                        шпионажа и атак на защищённые сервера конкурентов.</p>
-                                </div>
-                        </div>
-
-
-                        <div class="example-wrapper">
-                            <h2 class="example-title">Ресторан Seafood</h2>
-                            <p class="text">Додаток</p>
-                        </div>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a class="example-link" href="/">
-                        <div class="box-overlay"> <img src="./images/headphones.jpg" alt="Навушники" width="370">
-                            
-
-                                <div class="portfolio-overlay">
-                                    <p class="text">Технокряк это современная площадка
-                                        распространения коронавируса. Компании используют эту платформу для цифрового
-                                        шпионажа и атак на защищённые сервера конкурентов.</p>
-
-                                </div>
-                        </div>
-
-                        <div class="example-wrapper">
-                            <h2 class="example-title">Проєкт Prime</h2>
-                            <p class="text">Маркетинг</p>
-                        </div>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a class="example-link" href="/">
-                        <div class="box-overlay"> <img src="./images/boxing.jpg" alt="Пакування" width="370">
-                            
-
-                                <div class="portfolio-overlay">
-                                    <p class="text">Технокряк это современная площадка
-                                        распространения коронавируса. Компании используют эту платформу для цифрового
-                                        шпионажа и атак на защищённые сервера конкурентов.</p>
-
-                                </div>
-                        </div>
-
-                        <div class="example-wrapper">
-                            <h2 class="example-title">Проєкт Boxes</h2>
-                            <p class="text">Додаток</p>
-                        </div>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a class="example-link" href="/">
-                        <div class="box-overlay"> <img src="./images/inspiration.jpg" alt="Натхнення" width="370">
-                            
-
-                                <div class="portfolio-overlay">
-                                    <p class="text">Технокряк это современная площадка
-                                        распространения коронавируса. Компании используют эту платформу для цифрового
-                                        шпионажа и атак на защищённые сервера конкурентов.</p>
-
-                                </div>
-                        </div>
-
-                        <div class="example-wrapper">
-                            <h2 class="example-title" lang="en">Inspiration has no Borders</h2>
-                            <p class="text">Веб-сайт</p>
-                        </div>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a class="example-link" href="/">
-                        <div class="box-overlay">
-
-                            
-
-                                <img src="./images/books.jpg" alt="Книжки" width="370">
-                                <div class="portfolio-overlay">
-                                    <p class="text">Технокряк это современная площадка
-                                        распространения коронавируса. Компании используют эту платформу для цифрового
-                                        шпионажа и атак на защищённые сервера конкурентов.</p>
-                                </div>
-                        </div>
-
-                        <div class="example-wrapper">
-                            <h2 class="example-title">Видання Limited Edition</h2>
-                            <p class="text">Дизайн</p>
-                        </div>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a class="example-link" href="/">
-
-                            <div class="box-overlay">
-                                <img src="./images/lab.jpg" alt="Символи" width="370">
-                                <div class="portfolio-overlay">
-                                    <p class="text">Технокряк это современная площадка
-                                        распространения коронавируса. Компании используют эту платформу для цифрового
-                                        шпионажа и атак на защищённые сервера конкурентов.</p>
-                                </div>
+                                    <img width="370" src="./img/bitmap/portfolio/notebook.jpg" alt="Ноутбук">
+                                </picture>
+                                <p class="card__text">
+                                    Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все
+                                    це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.
+                                </p>
                             </div>
-                            <div class="example-wrapper">
-                                <h2 class="example-title">Проєкт LAB</h2>
-                                <p class="text">Маркетинг</p>
+                            <div class="card__content">
+                                <h2 class="card__title">Технокряк</h2>
+                                <p class="card__type">Веб-сайт</p>
                             </div>
                         </a>
                     </li>
-                    <li class="item">
-                        <a class="example-link" href="/">
+                    <!-- 2ый элемент  -->
+                    <li data-aos="zoom-in" class="card-set__item">
+                        <a href="" class="card-set__link link">
+                            <div class="card">
+                                <picture>
+                                    <source type="image/webp" media="(max-width: 767px)"
+                                        sizes="(min-width: 320px) 320px,90vw" srcset="./img/bitmap/portfolio/mobile/webp/nba-450.webp 450w,
+                                    ./img/bitmap/portfolio/mobile/webp/nba-900.webp 900w" />
 
-                            <div class="box-overlay"> <img src="./images/growing.jpg" alt="Ноутбук" width="370">
-                                <div class="portfolio-overlay">
-                                    <p class="text">Технокряк это современная площадка
-                                        распространения коронавируса. Компании используют эту платформу для цифрового
-                                        шпионажа и атак на защищённые сервера конкурентов.</p>
+                                    <source type="image/webp" media="(min-width: 768px) and (max-width: 1199px)"
+                                        sizes="(min-width: 768px) and (min-width: 354px) 354px, 50vw" srcset="./img/bitmap/portfolio/tablet/webp/nba-354.webp 354w,
+                                    ./img/bitmap/portfolio/tablet/webp/nba-708.webp 708w" />
 
-                                </div>
+                                    <source type="image/webp" media="(min-width: 1200px)"
+                                        sizes="(min-width: 370px) 370px, 25vw" srcset="./img/bitmap/portfolio/desktop/webp/nba-370.webp 370w,
+                                    ./img/bitmap/portfolio/desktop/webp/nba-740.webp 740w" />
+
+                                    <source type="image/jpeg" media="(max-width: 767px)"
+                                        sizes="(min-width: 320px) 320px,90vw" srcset="./img/bitmap/portfolio/mobile/nba-450.jpg 450w,
+                                    ./img/bitmap/portfolio/mobile/nba-900.jpg 900w" />
+
+                                    <source type="image/jpeg" media="(min-width: 768px) and (max-width: 1199px)"
+                                        sizes="(min-width: 354px) 354px, 50vw" srcset="./img/bitmap/portfolio/tablet/nba-354.jpg 354w,
+                                    ./img/bitmap/portfolio/tablet/nba-708.jpg 708w" />
+
+                                    <source type="image/jpeg" media="(min-width: 1200px)"
+                                        sizes="(min-width: 370px) 370px, 25vw" srcset="./img/bitmap/portfolio/desktop/nba-370.jpg 370w,
+                                    ./img/bitmap/portfolio/desktop/nba-740.jpg 740w" />
+
+                                    <img width="370" src="./img/bitmap/portfolio/nba.jpg" alt="Баскетбол">
+                                </picture>
+
+                                <p class="card__text">
+                                    Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все
+                                    це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.
+                                </p>
                             </div>
-                            <div class="example-wrapper">
-                                <h2 class="example-title">Growing Business</h2>
-                                <p class="text">Додаток</p>
+                            <div class="card__content">
+                                <h2 class="card__title">Постер <span lang="en">New Orlean vs Golden Star</span>
+                                </h2>
+                                <p class="card__type">Дизайн</p>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- 3ый элемент  -->
+                    <li data-aos="zoom-in" class="card-set__item">
+                        <a href="" class="card-set__link link">
+                            <div class="card">
+                                <picture>
+                                    <source type="image/webp" media="(max-width: 767px)"
+                                        sizes="(min-width: 320px) 320px,90vw" srcset="./img/bitmap/portfolio/mobile/webp/seafood-450.webp 450w,
+                                    ./img/bitmap/portfolio/mobile/webp/seafood-900.webp 900w" />
+
+                                    <source type="image/webp" media="(min-width: 768px) and (max-width: 1199px)"
+                                        sizes="(min-width: 768px) and (min-width: 354px) 354px, 50vw" srcset="./img/bitmap/portfolio/tablet/webp/seafood-354.webp 354w,
+                                    ./img/bitmap/portfolio/tablet/webp/seafood-708.webp 708w" />
+
+                                    <source type="image/webp" media="(min-width: 1200px)"
+                                        sizes="(min-width: 370px) 370px, 25vw" srcset="./img/bitmap/portfolio/desktop/webp/seafood-370.webp 370w,
+                                    ./img/bitmap/portfolio/desktop/webp/seafood-740.webp 740w" />
+
+                                    <source type="image/jpeg" media="(max-width: 767px)"
+                                        sizes="(min-width: 320px) 320px,90vw" srcset="./img/bitmap/portfolio/mobile/seafood-450.jpg 450w,
+                                    ./img/bitmap/portfolio/mobile/seafood-900.jpg 900w" />
+
+                                    <source type="image/jpeg" media="(min-width: 768px) and (max-width: 1199px)"
+                                        sizes="(min-width: 354px) 354px, 50vw" srcset="./img/bitmap/portfolio/tablet/seafood-354.jpg 354w,
+                                    ./img/bitmap/portfolio/tablet/seafood-708.jpg 708w" />
+
+                                    <source type="image/jpeg" media="(min-width: 1200px)"
+                                        sizes="(min-width: 370px) 370px, 25vw" srcset="./img/bitmap/portfolio/desktop/seafood-370.jpg 370w,
+                                    ./img/bitmap/portfolio/desktop/seafood-740.jpg 740w" />
+
+                                    <img width="370" src="./img/bitmap/portfolio/fish.jpg"
+                                        alt="Логотип Ресторана Seafood">
+                                </picture>
+                                <p class="card__text">
+                                    Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все
+                                    це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.
+                                </p>
+                            </div>
+                            <div class="card__content">
+                                <h2 class="card__title">Ресторан <span lang="en">Seafood</span></h2>
+                                <p class="card__type">Додаток</p>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- 4ый элемент  -->
+                    <li data-aos="zoom-in" class="card-set__item">
+                        <a href="" class="card-set__link link">
+                            <div class="card">
+                                <picture>
+                                    <source type="image/webp" media="(max-width: 767px)"
+                                        sizes="(min-width: 320px) 320px,90vw" srcset="./img/bitmap/portfolio/mobile/webp/headphones-450.webp 450w,
+                                    ./img/bitmap/portfolio/mobile/webp/headphones-900.webp 900w" />
+
+                                    <source type="image/webp" media="(min-width: 768px) and (max-width: 1199px)"
+                                        sizes="(min-width: 768px) and (min-width: 354px) 354px, 50vw" srcset="./img/bitmap/portfolio/tablet/webp/headphones-354.webp 354w,
+                                    ./img/bitmap/portfolio/tablet/webp/headphones-708.webp 708w" />
+
+                                    <source type="image/webp" media="(min-width: 1200px)"
+                                        sizes="(min-width: 370px) 370px, 25vw" srcset="./img/bitmap/portfolio/desktop/webp/headphones-370.webp 370w,
+                                    ./img/bitmap/portfolio/desktop/webp/headphones-740.webp 740w" />
+
+                                    <source type="image/jpeg" media="(max-width: 767px)"
+                                        sizes="(min-width: 320px) 320px,90vw" srcset="./img/bitmap/portfolio/mobile/headphones-450.jpg 450w,
+                                    ./img/bitmap/portfolio/mobile/headphones-900.jpg 900w" />
+
+                                    <source type="image/jpeg" media="(min-width: 768px) and (max-width: 1199px)"
+                                        sizes="(min-width: 354px) 354px, 50vw" srcset="./img/bitmap/portfolio/tablet/headphones-354.jpg 354w,
+                                    ./img/bitmap/portfolio/tablet/headphones-708.jpg 708w" />
+
+                                    <source type="image/jpeg" media="(min-width: 1200px)"
+                                        sizes="(min-width: 370px) 370px, 25vw" srcset="./img/bitmap/portfolio/desktop/headphones-370.jpg 370w,
+                                    ./img/bitmap/portfolio/desktop/headphones-740.jpg 740w" />
+
+                                    <img width="370" src="./img/bitmap/portfolio/headphones.jpg" alt="Наушники">
+                                </picture>
+                                <p class="card__text">
+                                    Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все
+                                    це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.
+                                </p>
+                            </div>
+                            <div class="card__content">
+                                <h2 class="card__title">Проект <span lang="en">Prime</span></h2>
+                                <p class="card__type">Маркетинг</p>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- 5ый элемент  -->
+                    <li data-aos="zoom-in" class="card-set__item">
+                        <a href="" class="card-set__link link">
+                            <div class="card">
+                                <picture>
+                                    <source type="image/webp" media="(max-width: 767px)"
+                                        sizes="(min-width: 320px) 320px,90vw" srcset="./img/bitmap/portfolio/mobile/webp/boxes-450.webp 450w,
+                                    ./img/bitmap/portfolio/mobile/webp/boxes-900.webp 900w" />
+
+                                    <source type="image/webp" media="(min-width: 768px) and (max-width: 1199px)"
+                                        sizes="(min-width: 768px) and (min-width: 354px) 354px, 50vw" srcset="./img/bitmap/portfolio/tablet/webp/boxes-354.webp 354w,
+                                    ./img/bitmap/portfolio/tablet/webp/boxes-708.webp 708w" />
+
+                                    <source type="image/webp" media="(min-width: 1200px)"
+                                        sizes="(min-width: 370px) 370px, 25vw" srcset="./img/bitmap/portfolio/desktop/webp/boxes-370.webp 370w,
+                                    ./img/bitmap/portfolio/desktop/webp/boxes-740.webp 740w" />
+
+                                    <source type="image/jpeg" media="(max-width: 767px)"
+                                        sizes="(min-width: 320px) 320px,90vw" srcset="./img/bitmap/portfolio/mobile/boxes-450.jpg 450w,
+                                    ./img/bitmap/portfolio/mobile/boxes-900.jpg 900w" />
+
+                                    <source type="image/jpeg" media="(min-width: 768px) and (max-width: 1199px)"
+                                        sizes="(min-width: 354px) 354px, 50vw" srcset="./img/bitmap/portfolio/tablet/boxes-354.jpg 354w,
+                                    ./img/bitmap/portfolio/tablet/boxes-708.jpg 708w" />
+
+                                    <source type="image/jpeg" media="(min-width: 1200px)"
+                                        sizes="(min-width: 370px) 370px, 25vw" srcset="./img/bitmap/portfolio/desktop/boxes-370.jpg 370w,
+                                    ./img/bitmap/portfolio/desktop/boxes-740.jpg 740w" />
+
+                                    <img width="370" src="./img/bitmap/portfolio/boxes.jpg" alt="Коробки">
+                                </picture>
+                                <p class="card__text">
+                                    Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все
+                                    це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.
+                                </p>
+                            </div>
+                            <div class="card__content">
+                                <h2 class="card__title">Проект <span lang="en">Boxes</span></h2>
+                                <p class="card__type">Додаток</p>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- 6ый элемент  -->
+                    <li data-aos="zoom-in" class="card-set__item">
+                        <a href="" class="card-set__link link">
+                            <div class="card">
+                                <picture>
+                                    <source type="image/webp" media="(max-width: 767px)"
+                                        sizes="(min-width: 320px) 320px,90vw" srcset="./img/bitmap/portfolio/mobile/webp/imac-450.webp 450w,
+                                    ./img/bitmap/portfolio/mobile/webp/imac-900.webp 900w" />
+
+                                    <source type="image/webp" media="(min-width: 768px) and (max-width: 1199px)"
+                                        sizes="(min-width: 768px) and (min-width: 354px) 354px, 50vw" srcset="./img/bitmap/portfolio/tablet/webp/imac-354.webp 354w,
+                                    ./img/bitmap/portfolio/tablet/webp/imac-708.webp 708w" />
+
+                                    <source type="image/webp" media="(min-width: 1200px)"
+                                        sizes="(min-width: 370px) 370px, 25vw" srcset="./img/bitmap/portfolio/desktop/webp/imac-370.webp 370w,
+                                    ./img/bitmap/portfolio/desktop/webp/imac-740.webp 740w" />
+
+                                    <source type="image/jpeg" media="(max-width: 767px)"
+                                        sizes="(min-width: 320px) 320px,90vw" srcset="./img/bitmap/portfolio/mobile/imac-450.jpg 450w,
+                                    ./img/bitmap/portfolio/mobile/imac-900.jpg 900w" />
+
+                                    <source type="image/jpeg" media="(min-width: 768px) and (max-width: 1199px)"
+                                        sizes="(min-width: 354px) 354px, 50vw" srcset="./img/bitmap/portfolio/tablet/imac-354.jpg 354w,
+                                    ./img/bitmap/portfolio/tablet/imac-708.jpg 708w" />
+
+                                    <source type="image/jpeg" media="(min-width: 1200px)"
+                                        sizes="(min-width: 370px) 370px, 25vw" srcset="./img/bitmap/portfolio/desktop/imac-370.jpg 370w,
+                                    ./img/bitmap/portfolio/desktop/imac-740.jpg 740w" />
+
+                                    <img width="370" src="./img/bitmap/portfolio/imac.jpg" alt="Моноблок">
+                                </picture>
+                                <p class="card__text">
+                                    Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все
+                                    це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.
+                                </p>
+                            </div>
+                            <div class="card__content">
+                                <h2 lang="en" class="card__title">Inspiration has no Borders</h2>
+                                <p class="card__type">Веб-сайт</p>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- 7ый элемент  -->
+                    <li data-aos="zoom-in" class="card-set__item">
+                        <a href="" class="card-set__link link">
+                            <div class="card">
+                                <picture>
+                                    <source type="image/webp" media="(max-width: 767px)"
+                                        sizes="(min-width: 320px) 320px,90vw" srcset="./img/bitmap/portfolio/mobile/webp/magazine-450.webp 450w,
+                                    ./img/bitmap/portfolio/mobile/webp/magazine-900.webp 900w" />
+
+                                    <source type="image/webp" media="(min-width: 768px) and (max-width: 1199px)"
+                                        sizes="(min-width: 768px) and (min-width: 354px) 354px, 50vw" srcset="./img/bitmap/portfolio/tablet/webp/magazine-354.webp 354w,
+                                    ./img/bitmap/portfolio/tablet/webp/magazine-708.webp 708w" />
+
+                                    <source type="image/webp" media="(min-width: 1200px)"
+                                        sizes="(min-width: 370px) 370px, 25vw" srcset="./img/bitmap/portfolio/desktop/webp/magazine-370.webp 370w,
+                                    ./img/bitmap/portfolio/desktop/webp/magazine-740.webp 740w" />
+
+                                    <source type="image/jpeg" media="(max-width: 767px)"
+                                        sizes="(min-width: 320px) 320px,90vw" srcset="./img/bitmap/portfolio/mobile/magazine-450.jpg 450w,
+                                    ./img/bitmap/portfolio/mobile/magazine-900.jpg 900w" />
+
+                                    <source type="image/jpeg" media="(min-width: 768px) and (max-width: 1199px)"
+                                        sizes="(min-width: 354px) 354px, 50vw" srcset="./img/bitmap/portfolio/tablet/magazine-354.jpg 354w,
+                                    ./img/bitmap/portfolio/tablet/magazine-708.jpg 708w" />
+
+                                    <source type="image/jpeg" media="(min-width: 1200px)"
+                                        sizes="(min-width: 370px) 370px, 25vw" srcset="./img/bitmap/portfolio/desktop/magazine-370.jpg 370w,
+                                    ./img/bitmap/portfolio/desktop/magazine-740.jpg 740w" />
+
+                                    <img width="370" src="./img/bitmap/portfolio/magazine.jpg" alt="Журнал">
+                                </picture>
+                                <p class="card__text">
+                                    Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все
+                                    це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.
+                                </p>
+                            </div>
+                            <div class="card__content">
+                                <h2 class="card__title">Видання <span lang="en">Limited Edition</span></h2>
+                                <p class="card__type">Дизайн</p>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- 8ый элемент  -->
+                    <li data-aos="zoom-in" class="card-set__item">
+                        <a href="" class="card-set__link link">
+                            <div class="card">
+                                <picture>
+                                    <source type="image/webp" media="(max-width: 767px)"
+                                        sizes="(min-width: 320px) 320px,90vw" srcset="./img/bitmap/portfolio/mobile/webp/label-450.webp 450w,
+                                    ./img/bitmap/portfolio/mobile/webp/label-900.webp 900w" />
+
+                                    <source type="image/webp" media="(min-width: 768px) and (max-width: 1199px)"
+                                        sizes="(min-width: 768px) and (min-width: 354px) 354px, 50vw" srcset="./img/bitmap/portfolio/tablet/webp/label-354.webp 354w,
+                                    ./img/bitmap/portfolio/tablet/webp/label-708.webp 708w" />
+
+                                    <source type="image/webp" media="(min-width: 1200px)"
+                                        sizes="(min-width: 370px) 370px, 25vw" srcset="./img/bitmap/portfolio/desktop/webp/label-370.webp 370w,
+                                    ./img/bitmap/portfolio/desktop/webp/label-740.webp 740w" />
+
+                                    <source type="image/jpeg" media="(max-width: 767px)"
+                                        sizes="(min-width: 320px) 320px,90vw" srcset="./img/bitmap/portfolio/mobile/label-450.jpg 450w,
+                                    ./img/bitmap/portfolio/mobile/label-900.jpg 900w" />
+
+                                    <source type="image/jpeg" media="(min-width: 768px) and (max-width: 1199px)"
+                                        sizes="(min-width: 354px) 354px, 50vw" srcset="./img/bitmap/portfolio/tablet/label-354.jpg 354w,
+                                    ./img/bitmap/portfolio/tablet/label-708.jpg 708w" />
+
+                                    <source type="image/jpeg" media="(min-width: 1200px)"
+                                        sizes="(min-width: 370px) 370px, 25vw" srcset="./img/bitmap/portfolio/desktop/label-370.jpg 370w,
+                                    ./img/bitmap/portfolio/desktop/label-740.jpg 740w" />
+
+                                    <img width="370" src="./img/bitmap/portfolio/labeltag.jpg" alt="Ярлык">
+                                </picture>
+                                <p class="card__text">
+                                    Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
+                                    Все
+                                    це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну
+                                    особу.
+                                </p>
+                            </div>
+                            <div class="card__content">
+                                <h2 class="card__title">Проект <span lang="en">LAB</span></h2>
+                                <p class="card__type">Маркетинг</p>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- 9ый элемент  -->
+                    <li data-aos="zoom-in" class="card-set__item">
+                        <a href="" class="card-set__link link">
+                            <div class="card">
+                                <picture>
+                                    <source type="image/webp" media="(max-width: 767px)"
+                                        sizes="(min-width: 320px) 320px,90vw" srcset="./img/bitmap/portfolio/mobile/webp/notebook-second-450.webp 450w,
+                                        ./img/bitmap/portfolio/mobile/webp/notebook-second-900.webp 900w" />
+
+                                    <source type="image/webp" media="(min-width: 768px) and (max-width: 1199px)"
+                                        sizes="(min-width: 768px) and (min-width: 354px) 354px, 50vw" srcset="./img/bitmap/portfolio/tablet/webp/notebook-second-354.webp 354w,
+                                        ./img/bitmap/portfolio/tablet/webp/notebook-second-708.webp 708w" />
+
+                                    <source type="image/webp" media="(min-width: 1200px)"
+                                        sizes="(min-width: 370px) 370px, 25vw" srcset="./img/bitmap/portfolio/desktop/webp/notebook-second-370.webp 370w,
+                                    ./img/bitmap/portfolio/desktop/webp/notebook-second-740.webp 740w" />
+
+                                    <source type="image/jpeg" media="(max-width: 767px)"
+                                        sizes="(min-width: 320px) 320px,90vw" srcset="./img/bitmap/portfolio/mobile/notebook-second-450.jpg 450w,
+                                    ./img/bitmap/portfolio/mobile/notebook-second-900.jpg 900w" />
+
+                                    <source type="image/jpeg" media="(min-width: 768px) and (max-width: 1199px)"
+                                        sizes="(min-width: 354px) 354px, 50vw" srcset="./img/bitmap/portfolio/tablet/notebook-second-354.jpg 354w,
+                                    ./img/bitmap/portfolio/tablet/notebook-second-708.jpg 708w" />
+
+                                    <source type="image/jpeg" media="(min-width: 1200px)"
+                                        sizes="(min-width: 370px) 370px, 25vw" srcset="./img/bitmap/portfolio/desktop/notebook-second-370.jpg 370w,
+                                    ./img/bitmap/portfolio/desktop/notebook-second-740.jpg 740w" />
+
+                                    <img width="370" src="./img/bitmap/portfolio/notebook2.jpg" alt="Ноутбук">
+                                </picture>
+                                <p class="card__text">
+                                    Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все
+                                    це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.
+                                </p>
+                            </div>
+                            <div class="card__content">
+                                <h2 lang="en" class="card__title">Growing Business</h2>
+                                <p class="card__type">Додаток</p>
                             </div>
                         </a>
                     </li>
@@ -238,61 +489,86 @@
             </div>
         </section>
     </main>
-    <footer class="footer">
-        <div class="container">
-            <div>
-                <a lang="en" class="logo link" href="/"><span class="logo__accent">Web</span>Studio</a>
-                <address class="adress">
-                    <ul class="adress__list">
-                        <li class="item"><a class="adress__list--physical" href="https://goo.gl/maps/tJKo2RhC8Hp1i2VQ6"
-                                target="_blank" rel="noopener noreferrer nofollow">
-                                м. Київ, пр-т Лесі Українки, 26</a></li>
-                        <li class="item"><a class="link" href="mailto:info@devstudio.com">info@devstudio.com</a></li>
-                        <li class="item"><a class="link" href="tel:+380961111111">+380961111111</a></li>
+    <!-- Футер  -->
+    <footer class="page-footer" id="contacts">
+        <div class="container page-footer__container">
+            <div data-aos="zoom-in" class="page-footer__address-thumb address-thumb">
+                <a lang="en" class="logo logo--white" href="./index.html"><span
+                        class="logo__accent">Web</span>Studio</a>
+                <address class="address">
+                    <ul class="address__list list">
+                        <li class="address__item">
+                            <a class=" address__link  address__link--white link"
+                                href="https://goo.gl/maps/qgEF6CwVhvNn76ka9" target="_blank"
+                                rel="noopener noreferrer nofollow ">м. Київ, пр-т Лесі Українки, 26</a>
+                        </li>
+                        <li class="address__item">
+                            <a class="address__link link" href="mailto:info@example.com">info@example.com</a>
+                        </li>
+                        <li class="address__item">
+                            <a class="address__link link" href="tel:+380991111111">+38 099 111 11 11</a>
+                        </li>
                     </ul>
                 </address>
             </div>
-            <div class="connect">
-                <p class="text">приєднуйтесь</p>
-                <ul class="socials-list">
-                    <li class="item">
-                        <a class="connect-link" href="/" target="_blank" rel="noopener noreferrer nofollow">
-                            <svg width="20" height="20">
-                                <use href="./images/icons.svg#icon-instagram"></use>
-                            </svg></a>
+            <div data-aos="zoom-in" class="page-footer__social-networks-thumb social-networks-thumb">
+                <b class="social-networks-thumb__text page-footer__text">приєднуйтесь</b>
+                <ul class="social-networks list">
+                    <li class="social-networks__item">
+                        <a href="" class="social-networks__link social-networks__link---opacity">
+                            <svg width="20" height="20" aria-label="Instagram"
+                                class="social-networks__icon social-networks__icon--white">
+                                <use href="./img/svg/symbol-defs.svg#icon-card-1-instagram"></use>
+                            </svg>
+                        </a>
                     </li>
-                    <li class="item"><a class="connect-link" href="/" target="_blank"
-                            rel="noopener noreferrer nofollow"><svg width="20" height="20">
-                                <use href="./images/icons.svg#icon-twitter"></use>
-                            </svg></a></li>
-                    <li class="item">
-                        <a class="connect-link" href="/" target="_blank" rel="noopener noreferrer nofollow">
-                            <svg width="20" height="20">
-                                <use href="./images/icons.svg#icon-facebook"></use>
-                            </svg></a>
+                    <li class="social-networks__item">
+                        <a href="" class="social-networks__link social-networks__link---opacity">
+                            <svg width="20" height="20" aria-label="Twitter"
+                                class="social-networks__icon social-networks__icon--white">
+                                <use href="./img/svg/symbol-defs.svg#icon-card-2-twitter"></use>
+                            </svg>
+                        </a>
                     </li>
-                    <li class="item"><a class="connect-link" href="/" target="_blank"
-                            rel="noopener noreferrer nofollow"><svg width="20" height="20">
-                                <use href="./images/icons.svg#icon-linkedin"></use>
-                            </svg></a></li>
+                    <li class="social-networks__item">
+                        <a href="" class="social-networks__link social-networks__link---opacity">
+                            <svg width="20" height="20" aria-label="Facebook"
+                                class="social-networks__icon social-networks__icon--white">
+                                <use href="./img/svg/symbol-defs.svg#icon-card-3-facebook"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="social-networks__item">
+                        <a href="" class="social-networks__link social-networks__link---opacity">
+                            <svg width="20" height="20" aria-label="LinkedIn"
+                                class="social-networks__icon social-networks__icon--white">
+                                <use href="./img/svg/symbol-defs.svg#icon-card-4-linkedin"></use>
+                            </svg>
+                        </a>
+                    </li>
                 </ul>
             </div>
-
-            <form class="footer-form">
-                <p class="footer-form__text">Підпишіться на розсилку</p>
-                <div class="form-wrap">
-                    <input class="form-wrap__input" type="email" name="submit-mail" id="submit-mail"
-                        placeholder="E-mail">
-                    <button class="primery button" type="submit">Підписатися
-                        <svg class="social-icon" width="24" height="24">
-                            <use href="./images/icons.svg#icon-send"></use>
-                        </svg>
-                    </button>
-                </div>
-            </form>
-
+            <div data-aos="zoom-in" class="page-footer__subscription subscription-thumb">
+                <form class="subscription__form">
+                    <b class="subscription-form__text page-footer__text">Підпишіться на розсилку</b>
+                    <div class="subscription-form__wrapper">
+                        <input type="email" name="email" class="subscription-form__input" required placeholder="E-mail">
+                        <button type="submit" class="subscription-form__submit">Підписатися
+                            <svg width="24" height="24" class="subscription-form__icon">
+                                <use href="./img/svg/symbol-defs.svg#icon-send"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </footer>
+    <script src="./js/body-padding-top.js"></script>
+    <script src="./js/mobile-menu.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
